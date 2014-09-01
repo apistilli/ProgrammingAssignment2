@@ -1,8 +1,5 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
-## this function create an object of type list. This object stores a matrix and its inverse
+## makeCacheMatrix is a function that creates an object of type list. 
+## This object stores a matrix and its inverse, along with the methods to set the matrix value
 
 makeCacheMatrix <- function(x = matrix()) {
     i <- NULL
@@ -17,10 +14,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
-## The function accesses the object matrix, created by the above function.
-## It returns the inverse of the matrix by using its cached value or calculating it (and caching it)
-
+## The function accesses the object matrix, created by the makeCacheMatrix function.
+## It returns the inverse of the matrix by using its cached value 
+## or calculating it (and caching it)
+## .
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
     i <- x$getinverse()
@@ -28,8 +25,7 @@ cacheSolve <- function(x, ...) {
         return(i)
     }
     data <- x$get()
-    print(data)
-    i <- solve(data)
+    i <- solve(data, ...)
     x$setinverse(i)
     i
 }
